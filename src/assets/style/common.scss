@@ -1,0 +1,37 @@
+@import "palette";
+
+$theme-colors: (
+  "primary": $color3
+);
+
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+@import '../../../node_modules/bootstrap-vue/src/index.scss';
+@import "vue-transition";
+
+// bootstrap breakpoints
+$xs: 0;
+$sm: 1;
+$md: 2;
+$lg: 3;
+$xl: 4;
+
+// color func
+@function base1($alpha: 1) {
+  @return adjust_color($color1, $alpha:$alpha - 1);
+}
+
+@function base2($alpha: 1) {
+  @return adjust_color($color2, $alpha:$alpha - 1);
+}
+
+@function base3($alpha: 1) {
+  @return adjust_color($color3, $alpha:$alpha - 1);
+}
+
+@function base4($alpha: 1) {
+  @return adjust_color($color4, $alpha:$alpha - 1);
+}
+
+@function base5($alpha: 1) {
+  @return adjust_color($color5, $alpha:$alpha - 1);
+}

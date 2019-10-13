@@ -1,8 +1,28 @@
+/* eslint-disable no-console */
 import Vue from 'vue'
+import BootstrapVue from 'bootstrap-vue'
 import App from './App.vue'
+import router from './route'
 
-Vue.config.productionTip = false
+import { library } from "@fortawesome/fontawesome-svg-core";
+import usedFonts from './fontAwesome'
+library.add(...usedFonts);
 
-new Vue({
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+Vue.component('font-awesome-icon', FontAwesomeIcon);
+
+Vue.config.productionTip = false;
+
+Vue.use(BootstrapVue);
+
+// eslint-disable-next-line no-unused-vars
+const app = new Vue({
+  router,
   render: h => h(App),
-}).$mount('#app')
+}).$mount('#app');
+
+window.addEventListener('message', (e) => {
+  if (e.data && typeof e.data === 'string' && e.data.match(/webpackHotUpdate/)) {
+    console.log('%c======= HOT RELOAD =======', 'font-size: large');
+  }
+});
