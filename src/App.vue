@@ -1,14 +1,14 @@
 <template>
   <b-container id="app" class="p-0" fluid>
     <b-row class="m-0 p-0" no-gutters>
-      <b-col id="page" cols="12" offset-md="4" md="8">
+      <b-col id="page" cols="12" offset-lg="4" lg="8">
         <b-col class="header">
           <h1 id="title" class="mb-0">{{ $route.name !== 'Top' ? $route.name : 'Yuichiro Smith' }}</h1>
         </b-col>
         <b-col class="main-content">
           <transition name="menu-transition" mode="out-in">
             <div id="menu-wrapper" v-show="$route.name !== 'Top'">
-              <b-list-group class="menu" horizontal="md">
+              <b-list-group class="menu" horizontal="lg">
                 <b-list-group-item id="menu-toggle" @click="toggleMenu = !toggleMenu">
                   <font-awesome-icon :icon="toggleMenu ? 'times' : 'bars' "/>
                   Menu
@@ -72,7 +72,7 @@
         return this.getBreakPointLevel(this.globalState.currentBreakpoint);
       },
       menuItems() {
-        if (this.currentBreakpointLevel < this.getBreakPointLevel('md') && !this.toggleMenu)
+        if (this.currentBreakpointLevel < this.getBreakPointLevel('lg') && !this.toggleMenu)
           return [];
         return this.topPages;
       }
@@ -90,7 +90,7 @@
     }
 
     #page {
-      @if $breakpoint >= $md {
+      @if $breakpoint >= $lg {
         box-shadow: -15px 0 15px base1(0.4);
       }
     }
@@ -100,7 +100,7 @@
       padding-bottom: 2rem;
       background-color: base5();
       min-height: 100vh;
-      @if $breakpoint < $md {
+      @if $breakpoint < $lg {
         box-shadow: 0 0 15px 5px base1(0.4);
       }
       @else {
@@ -118,7 +118,7 @@
       z-index: -2;
       object-fit: cover;
 
-      @if $breakpoint >= $md {
+      @if $breakpoint >= $lg {
         width: 33.33333%;
         height: 100%;
         object-position: 25% 0;
@@ -135,7 +135,7 @@
         vertical-align: middle;
       }
 
-      @if $breakpoint >= $md {
+      @if $breakpoint >= $lg {
         background-color: base5();
         color: base2();
         text-align: left;
@@ -169,7 +169,7 @@
         background-color: $color5;
         margin-bottom: 1rem;
 
-        @if $breakpoint < $md {
+        @if $breakpoint < $lg {
           #menu-toggle {
             display: block;
           }
@@ -186,8 +186,8 @@
   }
 
   @include main($xs);
-  @include media-breakpoint-up(md) {
-    @include main($md);
+  @include media-breakpoint-up(lg) {
+    @include main($lg);
   }
 
 </style>

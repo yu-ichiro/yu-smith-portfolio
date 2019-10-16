@@ -68,10 +68,10 @@
 
 <style lang="scss" scoped>
     .links {
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(lg) {
             column-count: 2;
         }
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(md) {
             column-count: 1;
         }
     }
