@@ -14,6 +14,16 @@
                             Go »
                         </b-button>
                     </b-card>
+                    <b-card>
+                        <b-card-title>
+                            <font-awesome-icon icon="address-card" size="sm"/>
+                            Portfolio
+                        </b-card-title>
+                        <b-card-text>作ったもの一覧</b-card-text>
+                        <b-button to="/portfolio" class="card-link" variant="primary">
+                            Go »
+                        </b-button>
+                    </b-card>
                     <b-card v-if="false">
                         <b-card-title>
                             <font-awesome-icon icon="pen" size="sm"/>

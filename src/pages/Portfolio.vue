@@ -1,0 +1,68 @@
+<template>
+    <b-col id="portfolio">
+        <b-card>
+            <b-card-title>
+                ポートフォリオ
+            </b-card-title>
+            <b-card-group deck columns class="item-list">
+                <b-card>
+                    <b-card-title>
+                        <font-awesome-icon icon="address-card" size="sm"/>
+                        yu-smith.com
+                    </b-card-title>
+                    <b-card-text>
+                        このサイトです。<br>
+                        Vue.jsを基本に、Vue-router、SCSSなどを使って組み立て、Netlifyでホスティングしています。<br>
+                        海外の人の仕事も請けたいから多言語対応もしたさがある..<br>
+                        <br>
+                        ソースコードは<a href="https://github.com/yu-ichiro/yu-smith-portfolio" target="_blank">こちら</a>にあります。
+                    </b-card-text>
+                </b-card>
+                <b-card>
+                    <b-card-title>
+                        <font-awesome-icon icon="tools" size="sm"/>
+                        ex-tools
+                    </b-card-title>
+                    <b-card-text>
+                        ネーミングセンス、、<br>
+                        Pythonのライブラリ？です。<br>
+                        itertoolsとfunctoolsをまとめてインポートできるようにして、さらにオリジナルの機能をいくつか幾つか追加した感じのもの。<br>
+                        pipetoolsなどにも影響を受けて似たようなものも作ってます。<br>
+                        <br>
+                        PyPIにあげる練習も兼ねてやりました。<br>
+                        <code>pip install ex_tools</code>でインストールできます。<br>
+                        <br>
+                        <a href="https://github.com/yu-ichiro/ex-tools">Githubリポジトリ</a>
+                    </b-card-text>
+                </b-card>
+            </b-card-group>
+        </b-card>
+    </b-col>
+</template>
+
+<script>
+    import globalState from "@/globals";
+
+    export default {
+        name: "Portfolio",
+        data() {
+            return {
+                globalState: globalState,
+            }
+        },
+        mounted() {
+            this.globalState.eyeCatchImage = this.globalState.assets.img.portfolioImage;
+        }
+    }
+</script>
+
+<style lang="scss" scoped>
+    .item-list {
+        @include media-breakpoint-up(lg) {
+            column-count: 2;
+        }
+        @include media-breakpoint-down(md) {
+            column-count: 1;
+        }
+    }
+</style>

@@ -11,11 +11,19 @@
                         HIT-COLLECTION: <a href="https://twitter.com/hitcolle_19_ys" target="_blank">@hitcolle_19_ys</a>
                     </dd>
                     <dd>
-                        テクノロジー関係: <a href="https://twitter.com/yu___smith" target="_blank">@yu___smith</a>
+                        すゆみす(テクノロジー関係のアカウントをフォローしています): <a href="https://twitter.com/yu___smith" target="_blank">@yu___smith</a>
                     </dd>
                     <dt>Instagram</dt>
                     <dd>
                         HIT-COLLECTION: <a href="https://instagram.com/hitcolle_19_ys" target="_blank">@hitcolle_19_ys</a>
+                    </dd>
+                    <dt>Github</dt>
+                    <dd>
+                        <a href="https://github.com/yu-ichiro" target="_blank">@yu-ichiro</a>
+                    </dd>
+                    <dt>Qiita</dt>
+                    <dd>
+                        <a href="https://qiita.com/yu-ichiro" target="_blank">@yu-ichiro</a>
                     </dd>
                 </dl>
             </b-card-text>
