@@ -16,7 +16,7 @@
                     </b-card>
                     <b-card>
                         <b-card-title>
-                            <font-awesome-icon icon="tools" size="sm"/>
+                            <font-awesome-icon icon="file-image" size="sm"/>
                             Portfolio
                         </b-card-title>
                         <b-card-text>作ったもの一覧</b-card-text>
