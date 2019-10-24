@@ -47,6 +47,7 @@
         topPages: [
                 {name: 'Top', route: '/'},
                 {name: 'About', route: '/about', icon: 'address-card'},
+                {name: 'Portfolio', route: '/portfolio', icon: 'file-image'},
                 {name: 'Blog', route: '/blog', icon: 'pen', disabled: true},
                 {name: 'Updates', route: '/updates', icon: 'history', disabled: true},
                 {name: 'Contact', route: '/contact', icon: 'headset'},

@@ -1,4 +1,13 @@
-import {faAddressCard, faBars, faHeadset, faHistory, faPen, faTimes} from "@fortawesome/free-solid-svg-icons";
+import {
+    faAddressCard,
+    faBars,
+    faFileImage,
+    faHeadset,
+    faHistory,
+    faPen,
+    faTimes,
+    faTools
+} from "@fortawesome/free-solid-svg-icons";
 
 export default [
     faAddressCard,
@@ -6,5 +15,7 @@ export default [
     faHistory,
     faHeadset,
     faBars,
-    faTimes
+    faTimes,
+    faFileImage,
+    faTools
 ]
