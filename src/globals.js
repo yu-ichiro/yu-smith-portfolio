@@ -1,7 +1,7 @@
 import LightImage from '@/assets/img/light.jpg'
 import DarkImage from '@/assets/img/dark.jpg'
 import GreenImage from '@/assets/img/green.jpg'
-import PortfolioImage from '@/assets/img/noteIMGL0060.jpg'
+import PortfolioImage from '@/assets/img/noteIMGL0060-min.jpg'
 
 const Asset = {
     img: {
