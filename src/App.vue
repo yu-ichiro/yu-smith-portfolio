@@ -77,6 +77,13 @@
           return [];
         return this.topPages;
       }
+    },
+    created() {
+      // img preload
+      Object.values(globalState.assets.img).forEach(img => {
+        const image = new Image();
+        image.src = String(img);
+      })
     }
   }
 </script>
