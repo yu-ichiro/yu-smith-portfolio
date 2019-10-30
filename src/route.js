@@ -4,6 +4,7 @@ import Top from "@/pages/Top";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Portfolio from "@/pages/Portfolio";
+import HitUNet from "@/pages/portfolio/HitUNet";
 
 Vue.use(Router);
 
@@ -24,6 +25,11 @@ export default new Router({
             path: '/portfolio',
             name: 'Portfolio',
             component: Portfolio
+        },
+        {
+            path: '/portfolio/hitunet',
+            name: 'Portfolio > hit-u.net',
+            component: HitUNet
         },
         {
             path: '/blog',

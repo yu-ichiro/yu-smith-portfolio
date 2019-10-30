@@ -2,8 +2,10 @@
   <b-container id="app" class="p-0" fluid>
     <b-row class="m-0 p-0" no-gutters>
       <b-col id="page" cols="12" offset-lg="4" lg="8">
-        <b-col class="header">
-          <h1 id="title" class="mb-0">{{ $route.name !== 'Top' ? $route.name : 'Yuichiro Smith' }}</h1>
+        <b-col :class="{header: true, light: this.globalState.imageTitleLightColor}">
+          <h1 id="title" class="mb-0">
+            {{ $route.name !== 'Top' ? $route.name : 'Yuichiro Smith' }}
+          </h1>
         </b-col>
         <b-col class="main-content">
           <transition name="menu-transition" mode="out-in">
@@ -148,6 +150,11 @@
         color: base2();
         text-align: left;
 
+        &.light {
+          color: base2();
+        }
+
+
         #title {
           padding-left: 50px;
           font-size: 25px;
@@ -157,8 +164,12 @@
       }
       @else {
         background-color: transparent;
-        color: base5();
+        color: base2();
         text-align: center;
+
+        &.light {
+          color: base5();
+        }
 
         #title {
           padding-left: 0;
