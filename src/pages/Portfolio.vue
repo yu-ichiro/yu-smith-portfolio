@@ -4,7 +4,7 @@
             <b-card-title>
                 ポートフォリオ
             </b-card-title>
-            <b-card-group deck columns class="item-list">
+            <b-card-group columns class="item-list">
                 <b-card>
                     <b-card-title>
                         <font-awesome-icon icon="address-card" size="sm"/>
