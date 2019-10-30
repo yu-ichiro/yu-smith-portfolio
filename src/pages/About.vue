@@ -86,6 +86,7 @@
         },
         mounted() {
             this.globalState.eyeCatchImage = this.globalState.assets.img.darkImage;
+            this.globalState.imageTitleLightColor = true;
         }
     }
 </script>

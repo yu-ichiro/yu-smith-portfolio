@@ -32,7 +32,7 @@
                         PyPIにあげる練習も兼ねてやりました。<br>
                         <code>pip install ex_tools</code>でインストールできます。<br>
                         <br>
-                        <a href="https://github.com/yu-ichiro/ex-tools">Githubリポジトリ</a>
+                        <outer-link href="https://github.com/yu-ichiro/ex-tools">Githubリポジトリ</outer-link>
                     </b-card-text>
                 </b-card>
             </b-card-group>
@@ -52,6 +52,7 @@
         },
         mounted() {
             this.globalState.eyeCatchImage = this.globalState.assets.img.portfolioImage;
+            this.globalState.imageTitleLightColor = false;
         }
     }
 </script>

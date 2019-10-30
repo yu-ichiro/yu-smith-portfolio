@@ -14,6 +14,7 @@ const Asset = {
 
 const globalState = {
     eyeCatchImage: Asset.img.lightImage,
+    imageTitleLightColor: true,
     assets: Asset,
     fontAwesomeLibrary: null,
     currentBreakpoint: '',
