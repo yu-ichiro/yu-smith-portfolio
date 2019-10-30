@@ -2,6 +2,7 @@ import {
     faAddressCard,
     faBars,
     faFileImage,
+    faGraduationCap,
     faHeadset,
     faHistory,
     faPen,
@@ -17,5 +18,6 @@ export default [
     faBars,
     faTimes,
     faFileImage,
-    faTools
+    faTools,
+    faGraduationCap
 ]

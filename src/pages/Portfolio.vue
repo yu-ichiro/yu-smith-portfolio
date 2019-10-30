@@ -7,15 +7,15 @@
             <b-card-group columns class="item-list">
                 <b-card>
                     <b-card-title>
-                        <font-awesome-icon icon="address-card" size="sm"/>
-                        yu-smith.com
+                        <font-awesome-icon icon="graduation-cap" size="sm"/>
+                        hit-u.net
                     </b-card-title>
                     <b-card-text>
-                        このサイトです。<br>
-                        Vue.jsを基本に、Vue-router、SCSSなどを使って組み立て、Netlifyでホスティングしています。<br>
-                        海外の人の仕事も請けたいから多言語対応もしたさがある..<br>
+                        一橋の有志で作る一橋生のための情報ポータル<br>
                         <br>
-                        ソースコードは<a href="https://github.com/yu-ichiro/yu-smith-portfolio" target="_blank">こちら</a>にあります。
+                        <b-button to="/portfolio/hitunet" class="card-link" variant="primary">
+                            詳細 »
+                        </b-button>
                     </b-card-text>
                 </b-card>
                 <b-card>
@@ -33,6 +33,19 @@
                         <code>pip install ex_tools</code>でインストールできます。<br>
                         <br>
                         <outer-link href="https://github.com/yu-ichiro/ex-tools">Githubリポジトリ</outer-link>
+                    </b-card-text>
+                </b-card>
+                <b-card>
+                    <b-card-title>
+                        <font-awesome-icon icon="address-card" size="sm"/>
+                        yu-smith.com
+                    </b-card-title>
+                    <b-card-text>
+                        このサイトです。<br>
+                        Vue.jsを基本に、Vue-router、SCSSなどを使って組み立て、Netlifyでホスティングしています。<br>
+                        海外の人の仕事も請けたいから多言語対応もしたさがある..<br>
+                        <br>
+                        ソースコードは<outer-link href="https://github.com/yu-ichiro/yu-smith-portfolio">こちら</outer-link>にあります。
                     </b-card-text>
                 </b-card>
             </b-card-group>
