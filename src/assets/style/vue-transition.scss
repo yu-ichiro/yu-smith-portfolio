@@ -35,3 +35,18 @@
     transition: opacity 270ms ease-out, transform 270ms ease-out;
   }
 }
+
+.slide-down-up {
+  &-enter, &-leave-to {
+    max-height: 0;
+  }
+  &-enter-to, &-leave {
+    max-height: 500px;
+  }
+  &-enter-active {
+    transition: max-height 500ms ease-in;
+  }
+  &-leave-active {
+    transition: max-height 500ms ease-out;
+  }
+}

@@ -5,6 +5,8 @@ import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Portfolio from "@/pages/Portfolio";
 import HitUNet from "@/pages/portfolio/HitUNet";
+import EMPlus from "@/pages/portfolio/EMPlus";
+import EMApp from "@/pages/portfolio/EMApp";
 
 Vue.use(Router);
 
@@ -30,6 +32,16 @@ export default new Router({
             path: '/portfolio/hitunet',
             name: 'Portfolio > hit-u.net',
             component: HitUNet
+        },
+        {
+            path: '/portfolio/uniaim/emplus',
+            name: 'Portfolio > 株式会社uniaim > EventManager+',
+            component: EMPlus
+        },
+        {
+            path: '/portfolio/uniaim/emapp',
+            name: 'Portfolio > 株式会社uniaim > アプリ開発案件',
+            component: EMApp
         },
         {
             path: '/blog',

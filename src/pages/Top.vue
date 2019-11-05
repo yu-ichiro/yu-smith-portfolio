@@ -71,8 +71,9 @@
             }
         },
         mounted() {
-            this.globalState.eyeCatchImage = this.globalState.assets.img.lightImage;
+            this.globalState.setEyeCatchImage(this.globalState.assets.img.lightImage);
             this.globalState.imageTitleLightColor = true;
+
         }
     }
 </script>

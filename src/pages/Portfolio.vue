@@ -7,6 +7,32 @@
             <b-card-group columns class="item-list">
                 <b-card>
                     <b-card-title>
+                        <font-awesome-icon icon="ticket-alt" size="sm"/>
+                        株式会社ユニエイム > EventManager+
+                    </b-card-title>
+                    <b-card-text>
+                        アルバイト先の株式会社ユニエイムで開発しているソリューション<br>
+                        <br>
+                        <b-button to="/portfolio/uniaim/emplus" class="card-link" variant="primary">
+                            詳細 »
+                        </b-button>
+                    </b-card-text>
+                </b-card>
+                <b-card>
+                    <b-card-title>
+                        <font-awesome-icon icon="mobile-alt" size="sm"/>
+                        株式会社ユニエイム > アプリ開発案件
+                    </b-card-title>
+                    <b-card-text>
+                        アルバイト先の株式会社ユニエイムで開発したアプリ<br>
+                        <br>
+                        <b-button to="/portfolio/uniaim/emapp" class="card-link" variant="primary">
+                            詳細 »
+                        </b-button>
+                    </b-card-text>
+                </b-card>
+                <b-card>
+                    <b-card-title>
                         <font-awesome-icon icon="graduation-cap" size="sm"/>
                         hit-u.net
                     </b-card-title>
@@ -64,7 +90,7 @@
             }
         },
         mounted() {
-            this.globalState.eyeCatchImage = this.globalState.assets.img.portfolioImage;
+            this.globalState.setEyeCatchImage(this.globalState.assets.img.portfolioImage);
             this.globalState.imageTitleLightColor = false;
         }
     }

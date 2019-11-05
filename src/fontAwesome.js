@@ -1,11 +1,14 @@
 import {
     faAddressCard,
     faBars,
+    faChevronRight,
     faFileImage,
     faGraduationCap,
     faHeadset,
     faHistory,
+    faMobileAlt,
     faPen,
+    faTicketAlt,
     faTimes,
     faTools
 } from "@fortawesome/free-solid-svg-icons";
@@ -19,5 +22,8 @@ export default [
     faTimes,
     faFileImage,
     faTools,
-    faGraduationCap
+    faGraduationCap,
+    faChevronRight,
+    faTicketAlt,
+    faMobileAlt,
 ]
