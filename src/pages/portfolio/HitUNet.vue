@@ -49,7 +49,8 @@
             }
         },
         mounted() {
-            this.globalState.eyeCatchImage = this.globalState.assets.img.hitUNetImage;
+            this.globalState.setEyeCatchImage(this.globalState.assets.img.hitUNetImage);
+            this.globalState.imageTitleLightColor = false;
         }
     }
 </script>

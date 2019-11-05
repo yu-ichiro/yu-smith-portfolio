@@ -15,7 +15,7 @@
                   <font-awesome-icon :icon="toggleMenu ? 'times' : 'bars' "/>
                   Menu
                 </b-list-group-item>
-                <b-list-group-item :to="page.route" :active="$route.name === page.name" @click="toggleMenu = page.name !== 'Top'" v-for="page in menuItems" :key="page.route" :hidden="page.disabled">
+                <b-list-group-item :to="page.route" :active="$route.name.indexOf(page.name) === 0" @click="toggleMenu = page.name !== 'Top'" v-for="page in menuItems" :key="page.route" :hidden="page.disabled">
                   <font-awesome-icon :icon="page.icon" v-if="page.icon"/>
                   {{ page.name }}
                 </b-list-group-item>
@@ -80,13 +80,6 @@
         return this.topPages;
       }
     },
-    created() {
-      // img preload
-      Object.values(globalState.assets.img).forEach(img => {
-        const image = new Image();
-        image.src = String(img);
-      })
-    }
   }
 </script>
 
@@ -120,6 +113,7 @@
     }
 
     #background {
+      transition: opacity 1.5s;
       display: inline;
       float: left;
       position: fixed;

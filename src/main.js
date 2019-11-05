@@ -4,21 +4,22 @@ import BootstrapVue from 'bootstrap-vue'
 import OuterLink from "@/components/OuterLink";
 import App from './App.vue'
 import router from './route'
-
 import { library } from "@fortawesome/fontawesome-svg-core";
 import usedFonts from './fontAwesome'
+import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+import ToggleIndicator from "@/components/ToggleIndicator";
 library.add(...usedFonts);
 
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.component('outer-link', OuterLink);
+Vue.component('toggle-indicator', ToggleIndicator);
 
 Vue.config.productionTip = false;
 
 Vue.use(BootstrapVue);
 
 // eslint-disable-next-line no-unused-vars
-const app = new Vue({
+export const app = new Vue({
   router,
   render: h => h(App),
 }).$mount('#app');
