@@ -32,7 +32,7 @@
                 </dl>
             </b-card-text>
             <br>
-            <b-card-sub-title @click="showInquiry = !showInquiry">
+            <b-card-sub-title @click="showInquiry = !showInquiry" class="inquiry-toggle">
                 <toggle-indicator :toggle="showInquiry" /> 連絡フォーム
             </b-card-sub-title>
             <br>
@@ -129,5 +129,9 @@
 
     .inquiry {
         overflow: hidden;
+    }
+
+    .inquiry-toggle {
+        cursor: pointer;
     }
 </style>
