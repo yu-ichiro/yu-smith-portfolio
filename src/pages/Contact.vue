@@ -12,15 +12,15 @@
                 <dl>
                     <dt>Twitter</dt>
                     <dd>
-                        HIT-COLLECTION: <a href="https://twitter.com/hitcolle_19_ys" target="_blank">@hitcolle_19_ys</a>
+                        スミス 祐一郎: <a href="https://twitter.com/YuichiroLuke" target="_blank">@YuichiroLuke</a>
                     </dd>
                     <dd>
                         すゆみす: <a href="https://twitter.com/yu___smith" target="_blank">@yu___smith</a>
                     </dd>
-                    <dt>Instagram</dt>
-                    <dd>
-                        HIT-COLLECTION: <a href="https://instagram.com/hitcolle_19_ys" target="_blank">@hitcolle_19_ys</a>
-                    </dd>
+<!--                    <dt>Instagram</dt>-->
+<!--                    <dd>-->
+<!--                        HIT-COLLECTION: <a href="https://instagram.com/hitcolle_19_ys" target="_blank">@hitcolle_19_ys</a>-->
+<!--                    </dd>-->
                     <dt>Github</dt>
                     <dd>
                         <a href="https://github.com/yu-ichiro" target="_blank">@yu-ichiro</a>

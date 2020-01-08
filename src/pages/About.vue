@@ -9,7 +9,11 @@
                     <dt>生年月日</dt><dd>1997年8月4日</dd>
                     <dt>出身地</dt><dd>埼玉県</dd>
                     <dt>大学</dt><dd>一橋大学</dd>
-                    <dt>所属</dt><dd>株式会社ユニエイム チケット開発チーム(インターン生)</dd>
+                    <dt>所属</dt>
+                    <dd>
+                        株式会社ユニエイム チケット開発チーム(インターン生)<br />
+                        株式会社imp.ARTs CTO
+                    </dd>
                 </dl>
             </b-card-text>
         </b-card>
@@ -58,7 +62,10 @@
                     ３年次にはプログラミングサークルを立ち上げた友人たちと学内のデータを集約するサービス「hit-u.net」をインターンを通じて得た知識を活用し作成、リリース。
                     ４年次には第一回HIT-COLLECTIONに参加し、IT技術の魅力を伝える活動に取り組む。
                 </b-card-text>
-
+                <b-card-sub-title>▼フリーランス</b-card-sub-title>
+                <b-card-text>
+                    大学在学時に個人事業主として開業し、フリーランスエンジニアとしての活動を開始。株式会社imp.ARTsのCTOに就任し、サービスの開発に取り組む。
+                </b-card-text>
             </b-card-text>
         </b-card>
     </b-col>
@@ -77,6 +84,7 @@
                     {name: 'HTML/Javascript', value: 100},
                     {name: 'Node.js', value: 60},
                     {name: 'Vue.js', value: 70},
+                    {name: 'Ionic', value: 50},
                     {name: 'TypeScript', value: 50},
                     {name: 'PHP', value: 40},
                     {name: 'Swift', value: 35},
