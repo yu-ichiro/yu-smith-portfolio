@@ -38,26 +38,26 @@ const globalState = {
     assets: Asset,
     fontAwesomeLibrary: null,
     currentBreakpoint: '',
-};
-
-globalState.preloadAsset = function(assetSrc, assetClass) {
-    const loadedAssets = {};
-    return new Promise(((resolve, error) => {
-        if (loadedAssets[assetSrc]) resolve();
-        const asset = new assetClass();
-        asset.onload = () => {
-            loadedAssets[assetSrc] = true;
-            resolve()
-        };
-        asset.onerror = error;
-        asset.src = assetSrc;
-    }));
-};
-
-globalState.setEyeCatchImage = function(image) {
-    globalState.preloadAsset(image, Image).then(() => {
-        globalState.eyeCatchImage = image;
-    }).catch(DebugConsole.error);
+    lighting: 'auto',
+    envLighting: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
+    preloadAsset(assetSrc, assetClass) {
+        const loadedAssets = {};
+        return new Promise(((resolve, error) => {
+            if (loadedAssets[assetSrc]) resolve();
+            const asset = new assetClass();
+            asset.onload = () => {
+                loadedAssets[assetSrc] = true;
+                resolve()
+            };
+            asset.onerror = error;
+            asset.src = assetSrc;
+        }));
+    },
+    setEyeCatchImage(image) {
+        globalState.preloadAsset(image, Image).then(() => {
+            globalState.eyeCatchImage = image;
+        }).catch(DebugConsole.error);
+    }
 };
 
 export default globalState;

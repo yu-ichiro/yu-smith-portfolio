@@ -1,5 +1,11 @@
+<!--suppress ALL -->
 <template>
-  <b-container id="app" class="p-0" fluid>
+  <b-container id="app" :class="{
+    'p-0': true,
+    'auto': globalState.lighting === 'auto',
+    'light': globalState.lighting === 'light',
+    'dark': globalState.lighting === 'dark',
+  }" fluid>
     <b-row class="m-0 p-0" no-gutters>
       <b-col id="page" cols="12" offset-lg="4" lg="8">
         <b-col :class="{header: true, light: this.globalState.imageTitleLightColor}">
@@ -26,6 +32,7 @@
             <router-view />
           </transition>
           <bootstrap-breakpoint @breakpointChanged="breakpointChanged" />
+          <lighting-control v-model="globalState.lighting" :visible="true"/>
         </b-col>
       </b-col>
     </b-row>
@@ -36,12 +43,13 @@
 </template>
 
 <script>
-  import globalState from "@/globals";
-  import BootstrapBreakpoint from "@/components/BootstrapBreakpoint";
+  import globalState   from "@/globals"
+  import BootstrapBreakpoint from "@/components/BootstrapBreakpoint"
+  import LightingControl from "@/components/LightingControl"
 
   export default {
     name: 'app',
-    components: {'bootstrap-breakpoint': BootstrapBreakpoint},
+    components: {BootstrapBreakpoint, LightingControl},
     data () {
       return {
         globalState: globalState,
@@ -54,11 +62,12 @@
                 {name: 'Updates', route: '/updates', icon: 'history', disabled: true},
                 {name: 'Contact', route: '/contact', icon: 'headset'},
         ],
+        defer: [],
       }
     },
     methods: {
       breakpointChanged(breakpoint) {
-        this.globalState.currentBreakpoint = breakpoint;
+        this.globalState.currentBreakpoint = breakpoint
       },
       getBreakPointLevel(breakpoint) {
         return {
@@ -68,18 +77,35 @@
           'lg': 3,
           'xl': 4,
         }[breakpoint]
+      },
+      changeEnvironmentLighting(isDark) {
+        this.globalState.envLighting = isDark ? 'dark' : 'light'
       }
+    },
+    mounted() {
+      const media = window.matchMedia('(prefers-color-scheme: dark)')
+      const listner = (media) => this.changeEnvironmentLighting(media.matches)
+      media.addListener(listner)
+      this.defer.push(() => media.removeListener(listner))
+    },
+    beforeDestroy() {
+      this.defer.forEach(func => func())
     },
     computed: {
       currentBreakpointLevel() {
-        return this.getBreakPointLevel(this.globalState.currentBreakpoint);
+        return this.getBreakPointLevel(this.globalState.currentBreakpoint)
       },
       menuItems() {
         if (this.currentBreakpointLevel < this.getBreakPointLevel('lg') && !this.toggleMenu)
-          return [];
-        return this.topPages;
+          return []
+        return this.topPages
+      },
+      renderLighting() {
+        if (this.globalState.lighting === 'auto')
+          return this.globalState.envLighting
+        return this.globalState.lighting
       }
-    },
+    }
   }
 </script>
 
@@ -89,7 +115,12 @@
       font-family: 'Avenir', Helvetica, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      color: base2();
+      @include light-root {
+        color: base2();
+      }
+      @include dark-root {
+        color: base5();
+      }
     }
 
     #page {
@@ -101,7 +132,6 @@
     .main-content {
       padding-top: 1rem;
       padding-bottom: 2rem;
-      background-color: base5();
       min-height: 100vh;
       @if $breakpoint < $lg {
         box-shadow: 0 0 15px 5px base1(0.4);
@@ -110,6 +140,12 @@
         box-shadow: none;
       }
 
+      @include light {
+        background-color: base5();
+      }
+      @include dark {
+        background-color: base1();
+      }
     }
 
     #background {
@@ -140,12 +176,18 @@
       }
 
       @if $breakpoint >= $lg {
-        background-color: base5();
-        color: base2();
+        @include light {
+          background-color: base5();
+          color: base2();
+        }
+        @include dark {
+          background-color: base1();
+          color: base5();
+        }
         text-align: left;
 
         &.light {
-          color: base2();
+          color: base5();
         }
 
 
@@ -179,8 +221,14 @@
 
       .menu {
         text-align: center;
-        background-color: $color5;
         margin-bottom: 1rem;
+
+        @include light {
+          background-color: $color5;
+        }
+        @include dark {
+          background-color: $color1;
+        }
 
         @if $breakpoint < $lg {
           #menu-toggle {
@@ -195,7 +243,29 @@
       }
     }
 
+    .card {
+      @include dark {
+          background-color: $color2;
+      }
+    }
 
+    .list-group-item:not(.active) {
+      @include dark {
+        background-color: $color2;
+      }
+    }
+
+    .progress {
+      @include dark {
+        background-color: darken($color3, 15%);
+      }
+    }
+
+    a {
+      @include dark {
+        color: $color4;
+      }
+    }
   }
 
   @include main($xs);
