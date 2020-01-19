@@ -1,0 +1,87 @@
+@import "palette";
+
+$theme-colors: (
+  "primary": $color3
+);
+
+@import "vue-transition";
+
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/root";
+
+@import "../../../node_modules/bootstrap-vue/src/variables";
+@import "../../../node_modules/bootstrap-vue/src/utilities";
+
+// bootstrap breakpoints
+$xs: 0;
+$sm: 1;
+$md: 2;
+$lg: 3;
+$xl: 4;
+
+// color func
+@function base1($alpha: 1) {
+  @return adjust_color($color1, $alpha:$alpha - 1);
+}
+
+@function base2($alpha: 1) {
+  @return adjust_color($color2, $alpha:$alpha - 1);
+}
+
+@function base3($alpha: 1) {
+  @return adjust_color($color3, $alpha:$alpha - 1);
+}
+
+@function base4($alpha: 1) {
+  @return adjust_color($color4, $alpha:$alpha - 1);
+}
+
+@function base5($alpha: 1) {
+  @return adjust_color($color5, $alpha:$alpha - 1);
+}
+
+@mixin light {
+  #app.light & {
+    @content
+  }
+
+  #app.auto & {
+    @content
+  }
+}
+
+@mixin dark {
+  #app.dark & {
+    @content
+  }
+
+  #app.auto & {
+    @media screen and (prefers-color-scheme: dark) {
+      @content
+    }
+  }
+}
+
+@mixin light-root {
+  &.light {
+    @content
+  }
+
+  &.auto {
+    @content
+  }
+}
+
+@mixin dark-root {
+  &.dark {
+    @content
+  }
+
+  &.auto {
+    @media screen and (prefers-color-scheme: dark) {
+      @content
+    }
+  }
+}
